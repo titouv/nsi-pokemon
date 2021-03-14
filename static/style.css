@@ -1,0 +1,84 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #F7F7FC;
+}
+
+header {
+    background-color: white;
+    /* height: 96px; */
+    /* width: 100%; */
+    padding : 20px 120px
+}
+
+h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 50px;
+    /* identical to box height, or 104% */
+
+    letter-spacing: 1px;
+
+    color: #000000;
+
+
+}
+.wrapper {
+    display: flex;
+    margin: 50px 120px;
+    gap: 30px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 34px 59px;
+    background: #FFFFFF;
+    /* Drop Shadow Medium */
+
+    box-shadow: 0px 20px 24px rgba(17, 17, 17, 0.06);
+    border-radius: 25px;
+    gap: 20px;
+    flex-basis: 100px;
+}
+
+
+.info {
+    display: flex;  
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    flex: none;
+    width: 100%;
+    flex-grow: 0;
+    /* margin: 50px 0px; */
+}
+
+.info div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    flex: none;
+    flex-grow: 0;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.pokeimgdiv {
+    width: 200px;
+}
+
+
+.pokeimgdiv img {
+    width: 100%;
+}
