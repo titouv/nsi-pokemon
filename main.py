@@ -1,7 +1,7 @@
 #### IMPORT FOR CLASSIC POKEMON CLASS ####
 from random import randint
 from math import *
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 ####  IMPORT FOR API REQUEST IMAGES #### 
 import requests
 from PIL import Image
@@ -189,6 +189,9 @@ def data():
 
         return render_template('data.html',form_data = form_data, pokeimage = pokeimage)
 
+
+list_pokemons = []
+
 @app.route('/data/', methods=['POST', 'GET'])
 def data():
     if request.method == 'GET':
@@ -210,10 +213,21 @@ def data():
         pokedata["img"] = getpokeimage(pokedata["nm"])
 
         print(pokedata)
-        list_pokemons = []
+        global list_pokemons
         list_pokemons.append(pokedata)
 
+
+        print("la liste : ", list_pokemons)
+        # cookie = ("test1","test2")
+
+        # resp = make_response(render_template('main.html',pokemons = list_pokemons))
+        # resp.set_cookie('pokemons', cookie)
+
+
+
+
         return render_template('main.html',pokemons = list_pokemons)
+
 
 
 dracaufeu_img = getpokeimage("charizard")
