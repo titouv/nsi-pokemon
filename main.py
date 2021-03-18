@@ -125,18 +125,22 @@ def getpokeimage(name):
 
 
     response = requests.get(url1)
-    pokeid = response.json()["id"]
 
-    url = "https://pokeres.bastionbot.org/images/pokemon/"+str(pokeid)+".png"
+    if response.statu_code == 200 : 
+      pokeid = response.json()["id"]
 
-    responsepoke = requests.get(url)
+      url = "https://pokeres.bastionbot.org/images/pokemon/"+str(pokeid)+".png"
+
+      responsepoke = requests.get(url)
 
 
-    img = Image.open(BytesIO(responsepoke.content))
-    img = img.convert("RGBA")
-    img2 = img.save(str("static/"+pokemon+".png"))
-    return str("/static/"+pokemon+".png")
+      img = Image.open(BytesIO(responsepoke.content))
+      img = img.convert("RGBA")
+      img2 = img.save(str("static/"+pokemon+".png"))
+      return str("/static/"+pokemon+".png")
     # img.show()
+    else : 
+      return "/static/not_find.png"
 
  
 
